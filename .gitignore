@@ -1,0 +1,11 @@
+# ignore extensionless files (compiled ones)
+*
+!/**/
+!*.*
+
+# ignore compilation partials
+*.hi
+*.o
+
+# OSX garbage
+.DS_Store
