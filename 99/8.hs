@@ -1,10 +1,8 @@
-compress :: (Eq a) => [a] -> [a]
-compress [] = []
-compress (x:ys@(y:_))
-    | x == y = compress ys
-    | otherwise = x : compress ys
-compress ys = ys
+import Data.List
 
-answer = compress "aaabbbcccddd"
+compress :: (Eq a) => [a] -> [a]
+compress = map head . group
+
+answer = compress "aaaabccaadeeee"
 
 main = putStrLn $ show answer
