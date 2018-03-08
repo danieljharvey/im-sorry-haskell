@@ -3,20 +3,32 @@ module Lib
     ) where
 
 someFunc :: IO ()
-someFunc = print poop
+someFunc = putStrLn (show poop ++ " " ++ show scoop ++ " equals " ++ show hoop ++ " but also " ++ show noop)
 
 data StateFace a = Nothings | Everythings a
 
 instance (Show a) => Show (StateFace a) where
-    show Nothings = show "Nothing"
-    show (Everythings a) = show a
+    show Nothings = "Nothing"
+    show (Everythings a) = "Somethings " ++ show a
+
+instance Functor StateFace where
+    fmap _ Nothings = Nothings
+    fmap f (Everythings a) = Everythings (f a)
+
+instance Applicative StateFace where
+    pure = Everythings
+    (Everythings f) <*> (Everythings x) = Everythings(f x)
+    _ <*> _ = Nothings
 
 -- initial = Nothings
-other = Everythings 1
+other = Everythings 100
 
-stateMap :: (Num a) => (a -> a) -> StateFace a -> StateFace a
-stateMap _ Nothings = Nothings
-stateMap f (Everythings a) = Everythings (f a)
+-- create two StateFace functors
+poop = fmap (*100) other
+scoop = fmap (+1000) poop
 
--- sorted = stateMap (+1) initial
-poop = stateMap (+1) other
+-- use ap to do addition inside them
+hoop = fmap (+) poop <*> scoop
+
+-- still the rules apply though - Nothings ruins it all
+noop = fmap (+) hoop <*> Nothings
