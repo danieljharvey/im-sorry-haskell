@@ -1,0 +1,151 @@
+
+==================== FINAL INTERFACE ====================
+2018-03-25 15:51:11.791818 UTC
+
+interface main:Main 8022
+  interface hash: e0b2532959dc344372d36043e7b1a288
+  ABI hash: 696748289f30b337b925ac9741b3ad93
+  export-list hash: 6095c0d7ff73a971da5595f1dce07b64
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 8727e2eb483eb4a9344ea69711434e96
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.allWords
+  Main.alreadyGuessed
+  Main.charInWord
+  Main.colorText
+  Main.countIncorrect
+  Main.fillInCharacter
+  Main.filterIncorrect
+  Main.filterWords
+  Main.freshPuzzle
+  Main.gameOver
+  Main.gameWin
+  Main.gameWords
+  Main.handleGuess
+  Main.main
+  Main.makeNothing
+  Main.maxWordLength
+  Main.minWordLength
+  Main.randomWord
+  Main.randomWord'
+  Main.renderPuzzleChar
+  Main.runGame
+  Main.zipper
+  Main.Puzzle{Main.Puzzle}
+  Main.WordList
+module dependencies:
+package dependencies: ansi-terminal-0.8.0.2 array-0.5.2.0
+                      base-4.10.1.0* colour-2.3.4 deepseq-1.4.3.0 ghc-prim-0.5.1.1
+                      integer-gmp-1.0.1.0 random-1.1* time-1.8.0.2
+orphans: time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian colour-2.3.4:Data.Colour
+         base-4.10.1.0:GHC.Float base-4.10.1.0:GHC.Base
+family instance modules: base-4.10.1.0:Control.Applicative
+                         base-4.10.1.0:Data.Complex base-4.10.1.0:Data.Either
+                         base-4.10.1.0:Data.Functor.Compose base-4.10.1.0:Data.Functor.Const
+                         base-4.10.1.0:Data.Functor.Identity
+                         base-4.10.1.0:Data.Functor.Product base-4.10.1.0:Data.Functor.Sum
+                         base-4.10.1.0:Data.List.NonEmpty base-4.10.1.0:Data.Monoid
+                         base-4.10.1.0:Data.Semigroup base-4.10.1.0:Data.Type.Equality
+                         base-4.10.1.0:Data.Version base-4.10.1.0:Data.Void
+                         base-4.10.1.0:GHC.Exts base-4.10.1.0:GHC.Generics
+                         base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
+                         base-4.10.1.0:GHC.TypeNats
+import  -/  ansi-terminal-0.8.0.2:System.Console.ANSI c680848fb34e164587226ab6bd33b899
+import  -/  ansi-terminal-0.8.0.2:System.Console.ANSI.Types 702eabf3812b3371d64cecb12c5dc76b
+import  -/  ansi-terminal-0.8.0.2:System.Console.ANSI.Unix 1f1ad0d9b2e7123e391933122f5b0ef2
+import  -/  base-4.10.1.0:Control.Monad ebed2e8e7444944e0c1d827c6faf40a4
+import  -/  base-4.10.1.0:Data.Char fe4e3458190deeac19969ce15e33bed9
+import  -/  base-4.10.1.0:Data.Foldable 9ed87455d68e87ff2b5b8725eae9897e
+import  -/  base-4.10.1.0:Data.List 4ab7fa2a1b87502b23af891a384f0506
+import  -/  base-4.10.1.0:Data.Maybe 07738c5485acb328136bb15596f8b845
+import  -/  base-4.10.1.0:Data.OldList 555420b092ca8cf0a8f9666bc0e07dcf
+import  -/  base-4.10.1.0:GHC.Base 782fd99b5e36f3698a26179a49afca64
+import  -/  base-4.10.1.0:GHC.List e3060fbeb44ce0038e6b4dedf2dd9cf1
+import  -/  base-4.10.1.0:GHC.Num 6e1dc5d36d99a802edb39b92bb1923b8
+import  -/  base-4.10.1.0:GHC.Show 0a8ce2b5e533d1c2cfb7954e6736be45
+import  -/  base-4.10.1.0:GHC.Unicode 49c9de4fffed0d9be65aaeb6a60b757c
+import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
+import  -/  base-4.10.1.0:System.Exit dfc0230e6f69e5284631635d15ff33dc
+import  -/  base-4.10.1.0:System.IO 525805ab19df5e4fe6d8de7dde9cb909
+import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
+import  -/  ghc-prim-0.5.1.1:GHC.Types b1fd0716441595db508c1a74387bf394
+import  -/  random-1.1:System.Random c9dfbade5c0e5bc4ae42c058f948952b
+9d8376f91d1a44080a7fa4e531e1aea5
+  $fShowPuzzle :: GHC.Show.Show Main.Puzzle
+  DFunId
+9b011a23e831c68e47d87842f5811ea1
+  $tc'Puzzle :: GHC.Types.TyCon
+c8e3362ad4cd6e087e8d3d432b0083c2
+  $tcPuzzle :: GHC.Types.TyCon
+abb025fa105599d3dc5168bd703c0653
+  $trModule :: GHC.Types.Module
+9d8376f91d1a44080a7fa4e531e1aea5
+  data Puzzle
+    = Puzzle GHC.Base.String
+             [GHC.Base.Maybe GHC.Types.Char]
+             GHC.Base.String
+bebf37640b67bf35d63fd2c6a1d568f7
+  type WordList = [GHC.Base.String]
+3618265f9c11c7f1478c22a575df5f0c
+  allWords :: GHC.Types.IO Main.WordList
+299b5b6ae2dda0a1434ae60bccf6b9cc
+  alreadyGuessed :: Main.Puzzle -> GHC.Types.Char -> GHC.Types.Bool
+e0218c93e2df61474236d0bd2994043b
+  charInWord :: Main.Puzzle -> GHC.Types.Char -> GHC.Types.Bool
+50cd495dc81ca9cad44b1c47b43a3ebf
+  colorText ::
+    GHC.Base.String
+    -> System.Console.ANSI.Types.Color -> GHC.Types.IO ()
+91a43f6528a58d2c48bbdd0d2999aea8
+  countIncorrect :: Main.Puzzle -> GHC.Types.Int
+557be54dd420a527a3d1c28683cd934d
+  fillInCharacter :: Main.Puzzle -> GHC.Types.Char -> Main.Puzzle
+bda9b483df409ba7d96d261787a6f0b2
+  filterIncorrect :: GHC.Classes.Eq a => [a] -> [a] -> [a]
+60e41a7bc4bb7cd7444c4b9ea267dff3
+  filterWords :: GHC.Base.String -> GHC.Types.Bool
+9d0aaf8cc6d9266270902f3a8f24704d
+  freshPuzzle :: GHC.Base.String -> Main.Puzzle
+fd23816979b98f63d8f24f17129701b6
+  gameOver :: Main.Puzzle -> GHC.Types.IO ()
+546c5990d61db5330ee5d09532d88381
+  gameWin :: Main.Puzzle -> GHC.Types.IO ()
+f3071d0ce7c1b0360c40b5a00d950948
+  gameWords :: GHC.Types.IO Main.WordList
+5d70df299497aaece721479ed777cfb8
+  handleGuess ::
+    Main.Puzzle -> GHC.Types.Char -> GHC.Types.IO Main.Puzzle
+1ecb270cb7abe920603f26ebb081f978
+  main :: GHC.Types.IO ()
+a9fb8c96b87c4a6bae1de30e44a582f7
+  makeNothing :: a -> GHC.Base.Maybe a
+881df291bfcacec934171d5301ef8d08
+  maxWordLength :: GHC.Types.Int
+242ba303a9fa00f7e6348c7d1c0ea80d
+  minWordLength :: GHC.Types.Int
+6997494c850d186ce15d08d41acfd0da
+  randomWord :: Main.WordList -> GHC.Types.IO GHC.Base.String
+0c9c980942ac07081fb2ecefd16c65ff
+  randomWord' :: GHC.Types.IO GHC.Base.String
+d38eabb2e6dbb2e2077949a7d7959af5
+  renderPuzzleChar :: GHC.Base.Maybe GHC.Types.Char -> GHC.Types.Char
+69763145ff0c812fccb74ab93311d7a8
+  runGame :: Main.Puzzle -> GHC.Types.IO ()
+981906195bcf58f745eb574b4d0d0105
+  zipper ::
+    GHC.Classes.Eq a => a -> a -> GHC.Base.Maybe a -> GHC.Base.Maybe a
+instance [safe] GHC.Show.Show [Main.Puzzle] = Main.$fShowPuzzle
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
