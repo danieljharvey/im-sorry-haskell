@@ -23,3 +23,17 @@ executable hangman
                        split,
                        ansi-terminal,
                        hspec
+
+test-suite tests
+  ghc-options:      -Wall -fno-warn-orphans
+  type:             exitcode-stdio-1.0
+  main-is:          tests.hs
+  hs-source-dirs:   tests src
+  build-depends:    base >= 4.7 && < 5,
+                    hspec,
+                    random,
+                    split,
+                    ansi-terminal,
+                    QuickCheck
+  default-language: Haskell2010
+                    
