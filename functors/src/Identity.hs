@@ -1,5 +1,6 @@
 module Identity
     ( test
+    , Identity
     ) where
 
 import Test.QuickCheck

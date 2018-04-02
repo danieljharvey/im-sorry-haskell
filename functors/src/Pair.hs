@@ -1,5 +1,6 @@
 module Pair
     ( test
+    , Pair
     ) where
 
 import Test.QuickCheck
