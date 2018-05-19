@@ -1,21 +1,24 @@
-{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE DeriveGeneric, DeriveAnyClass, OverloadedStrings #-}
 
 module Level where
 
-import Data.Aeson (ToJSON)
+import Data.Aeson
 import GHC.Generics
+import qualified Data.ByteString.Lazy as B
 
 type Board = [[Int]]
 
-data Level = Level { levelID :: Int, board :: Board } deriving (Show, Generic)
+type LevelIDStr = String;
 
-instance ToJSON Level
+data Level = Level { levelID :: Int, board :: Board } deriving (Show, Generic, ToJSON, FromJSON)
 
-getLevelJSON :: String -> String
-getLevelJSON a = case fmap showLevel levelID of 
-                   Just a -> show a
-                   _ -> "Nothing found"
-                 where levelID = readMaybe a
+-- getEncodedJSON :: LevelIDStr -> B.ByteString
+getEncodedJSON a = case getLevelJSON a of
+  Just a -> encode a
+  _ -> B.empty
+
+getLevelJSON :: LevelIDStr -> Maybe Level
+getLevelJSON a = showLevel <$> readMaybe a
 
 showLevel :: Int -> Level
 showLevel a = Level { levelID = a, board = [] }

@@ -6,8 +6,8 @@ module Lib
 
 import Web.Scotty
 import Data.Monoid (mconcat)
-import Data.Text.Lazy
 import Level
+import qualified Data.ByteString.Lazy as B
 
 runServer :: IO ()
 runServer = scotty 3000 $ do
@@ -20,4 +20,5 @@ runServer = scotty 3000 $ do
     
     get "/level/:levelID" $ do
         levelIDString <- param "levelID"
-        json $ getLevelJSON levelIDString
+        bs <- getEncodedJSON levelIDString
+        html "Poo"
