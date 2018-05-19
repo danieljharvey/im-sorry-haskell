@@ -23,7 +23,8 @@ instance Show DogErrors where
     show IsNotBrown    = "Dog is not brown"
     show UnknownColour = "Don't know what that colour is"
 
-strLower name = fmap toLower name
+strLower :: String -> String
+strLower = fmap toLower
 
 -- Name validation
 
@@ -33,12 +34,12 @@ nameNotEmpty s = Right s
 
 nameNotTooLong :: DogName -> Either [DogErrors] DogName
 nameNotTooLong s
-  | (length s) > 10 = Left [NameTooLong]
+  | length s > 10 = Left [NameTooLong]
   | otherwise       = Right s
 
 containsS :: DogName -> Either [DogErrors] DogName
 containsS name
-  | 's' `elem` (strLower name) = Left [ContainsS]
+  | 's' `elem` strLower name = Left [ContainsS]
   | otherwise                 = Right name
 
 nameChecks :: DogName -> Either [DogErrors] DogName
@@ -48,8 +49,8 @@ nameChecks = nameNotEmpty >=> nameNotTooLong >=> containsS
 
 stringToColour :: String -> Either [DogErrors] DogColour
 stringToColour s
-  | (strLower s) `isInfixOf` "brown"  = Right Brownish
-  | (strLower s) `isInfixOf` "yellow" = Right Yellowish
+  | strLower s `isInfixOf` "brown"  = Right Brownish
+  | strLower s `isInfixOf` "yellow" = Right Yellowish
   | otherwise              = Left [UnknownColour]
 
 colourIsBrown :: DogColour -> Either [DogErrors] DogColour
@@ -67,7 +68,9 @@ getDog name colourString = do
 
 displayDog :: Either [DogErrors] Dog -> String
 displayDog (Right dog)   = show dog
-displayDog (Left errors) = "No dog of that name: " ++ (concatMap show errors)
+displayDog (Left errors) = "No dog of that name: " ++ concatMap show errors
+
+-- Business time
 
 someFunc :: IO ()
 someFunc = do
